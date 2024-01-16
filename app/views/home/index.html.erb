@@ -1,2 +1,48 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container home-sections min-vh-100 d-flex justify-content-center align-items-center">
+  <div>
+    <%= image_tag 'home-phone-bg.png', class: "images-section mx-3 d-none d-lg-block" %>
+  </div>
+
+  <div class="login-section">
+
+    <div class="card text-center pt-5" style="width:22rem;">
+      <%= image_tag 'logo.png', class: "card-img-top"%>
+      <div class="card-body px-4">
+        <div class="mb-3 mt-4">
+          <input type="email" class="form-control" id="email" placeholder="Phone number, username, or email">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <a href="#" class="btn btn-primary d-block">Log In</a>
+      </div>
+
+      <div class="d-flex align-items-center mt-2 px-4">
+        <div class="line"></div>
+        <div class="line-text">OR</div>
+        <div class="line"></div>
+      </div>
+
+      <a href="#" class="d-block mt-4 text-decoration-none fw-bold">
+        <%= image_tag("facebook.png", class: "facebook") %>
+        Log in with Facebook
+      </a>
+
+
+      <a href="#" class="fs-6 d-block mt-4 text-decoration-none">Forgot Password?</a>
+
+      <div class="unlawful-content my-4 px-3">You can also report content you believe is unlawful in your country without logging in.</div>
+
+    </div>
+
+
+
+    <div class="card text-center py-2 mt-3" style="width:22rem;">
+      <div class="card-text">
+        Don't have an account?
+        <a href="#" class="fs-6 my-4 text-decoration-none">Sign up</a>
+      </div>
+    </div>
+
+  </div>
+</div>
