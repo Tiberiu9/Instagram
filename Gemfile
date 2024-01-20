@@ -47,7 +47,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Added gems
 gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'font-awesome-sass', '~> 6.5', '>= 6.5.1'
+gem 'material_icons'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
