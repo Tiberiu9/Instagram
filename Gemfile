@@ -49,8 +49,6 @@ gem "bootsnap", require: false
 
 # Added gems
 gem 'devise', '~> 4.9', '>= 4.9.3'
-gem 'font-awesome-sass', '~> 6.5', '>= 6.5.1'
-gem 'material_icons'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
