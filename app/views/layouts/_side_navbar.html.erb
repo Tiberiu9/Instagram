@@ -1,0 +1,85 @@
+<div class="d-flex flex-column justify-content-between px-1 col-auto bg-white  min-vh-100 border border-1">
+  <div class="mt-4">
+    <div class="d-none d-xxl-block">
+      <%= link_to root_path do %>
+        <div class="d-flex justify-content-center m-2 p-2 rounded" id="navbar-logo" style="width: 230px;">
+          <%= image_tag 'logo.png', width: "100rem"%>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to root_path do %>
+        <div class="text-center m-3 d-xxl-none" id="navbar-icon" style="width: 30px">
+          <i class="fa-brands fa-instagram fa-xl text-black text-center text-decoration-none"></i>
+        </div>
+      <% end %>
+    </div>
+    <!--<hr>-->
+    <ul class="nav nav-pills flex-column " id="menu">
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-solid fa-house fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Home</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Search</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-regular fa-compass fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Explore</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-regular fa-paper-plane fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Messages</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-regular fa-heart fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Notifications</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+          <i class="fa-regular fa-square-plus fa-xl"></i>
+          <span class="ms-2 d-none d-xxl-inline">Create</span>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <% if current_user && current_user.profile_pic.attached? %>
+          <a href="#" class="nav-link text-black text-center text-xxl-start py-1 my-2 " aria-current="page">
+            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle p-0", style: "width: 1.8rem" %> 
+            <span class="ms-2 d-none d-xxl-inline">Profile</span>
+          </a>
+        <% else %>
+          <a href="#" class="nav-link text-black text-center text-xxl-start py-1 my-2 " aria-current="page">
+            <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0", style: "width: 1.8rem" %> 
+            <span class="ms-2 d-none d-xxl-inline">Profile</span>
+          </a>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div class="dropdown open ms-2 mb-3 rounded" id="navbar-more-button">
+      <a class="btn border-0 outline-none text-black" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-solid fa-bars fa-xl"></i><span class="ms-2 d-none d-xxl-inline">More</span>
+      </a>
+      <div class="dropdown-menu shadow" aria-labelledby="triggerId">
+        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="#">Settings</a>
+        <a class="dropdown-item" href="#">Settings</a>
+        <%= button_to "Log out",  destroy_user_session_path, class: "dropdown-item", method: :delete%>
+      </div>
+    </div>
+  </div>
+</div>
+
+

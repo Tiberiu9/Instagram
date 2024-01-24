@@ -1,3 +1,5 @@
+// ======================= General ==========================
+
 // html {
 //   height: 100vh;
 // }
@@ -27,6 +29,17 @@
 //   // // max-width: 100vh;
 //   // max-height: 100%;
 // }
+
+// ==================== Mobile Navbar =======================
+
+// ====================== Side Navbar ========================
+
+#navbar-logo:hover,
+#navbar-icon:hover,
+#navbar-more-button:hover,
+.nav-pills li a:hover {
+  background-color: #f2f2f2;
+}
 
 // ====================== Log In page ========================
 
@@ -79,17 +92,13 @@
 
 .carousel .carousel-indicators button {
   border-radius: 50%;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
-// .carousel-control-prev-icon {
-//   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-// }
-
-// .carousel-control-prev-icon {
-//   background-image: url(https://img.freepik.com/free-vector/cute-bee-flying-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector_138676-6016.jpg?w=826&t=st=1705627381~exp=1705627981~hmac=2cfc87556b495ee65238e9148e71c20cf6ba4839c1c3f36e89a477d2bd35e96a);
-// }
+.carousel-control-prev-icon {
+  background-image: url("previous-icon.png");
+}
 
 .carousel-control-next-icon {
   background-image: url("next-icon.png");
