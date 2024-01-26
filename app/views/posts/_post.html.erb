@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between">
         <div>
           <% if post.user.profile_pic.attached? %>
-            <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 10%; padding: 0;" %>
+            <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 10%; padding: 2px; border; border: 10 ; border-color: red" %>
           <% else %>
             <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 10%; padding: 2px; border; border: 10 ; border-color: red" %>
           <% end %>
@@ -47,7 +47,8 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div class="card-text mt-2 px-2" style="font-size: 14px"><span class="fw-bold fs-6"><%=post.user.username%></span> <%=post.caption%> captioooon dfdi dfif dsf dfmidm idmifm idmifmdd dfdsdf gfd dffgd  fghf g hh hhgfhhjgj hg hjgdifmi</div>
+      <div class="card-text mt-2 px-2" style="font-size: 14px"><span class="fw-bold fs-6"><%=post.user.username%>
+      </span><%=post.caption%> captioooon dfdi dfif dsf dfmidm idmifm idmifmdd dfdsdf gfd dffgd  fghf g hh hhgfhhjgj hg hjgdifmi</div>
     </div>
     <div class="card-footer d-flex justify-content-between bg-white px-2 pt-0 pb-3 mb-3 rounded-0" style=" border-top: 0px; border-bottom: 1px solid gray;">
       <input type="text" class="w-75 border-0" placeholder="Add a comment..." style="font-size: 14px; text-muted">
