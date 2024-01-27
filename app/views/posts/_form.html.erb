@@ -1,8 +1,8 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-fullscreen-md-down">
     <%= form_with(model: post) do |form| %>
-      <div class="modal-content">
-        <div class="modal-header p-0">
+      <div class="modal-content "  >
+        <div class="modal-header p-0" > 
           <div>
             <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
@@ -11,12 +11,11 @@
             <%= form.submit "Share", class: "btn btn-link link-primary text-decoration-none" %>
           </div>
         </div>
-        <!--body-->
-        <div class="modal-body d-flex p-0">
+        <div class="modal-body d-flex p-0" style="height:60vh">
           <div class="border-end border-secondary" style="width:60%">
-            <%= form.file_field :images, multiple:true %>
+            <%= form.file_field :images, multiple:true, id: "post-images" %>
           </div>
-          <div style="width:40%">
+          <div style="width: 40%">
             <% if post.errors.any? %>
               <div style="color: red">
                 <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -28,12 +27,12 @@
               </div>
             <% end %>
             <div class="my-2 ms-2">
-              <% if current_user.profile_pic.attached? %>
+              <% if current_user.profile_pic.attached? %>    <%# if current_user && current_user.profile_pic.attached? %>
                 <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 10%" %>
               <% else %>
                 <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 10%"%>
               <% end %>
-              <span class="fw-bold mx-2" style="font-size: 14px"><%= current_user.username %></span>
+              <span class="fw-bold mx-2" style="font-size: 14px"><%= current_user.username %></span>    <!--current_user.username-->
             </div>
             <div>
               <%= form.text_area :caption, rows: 7, placeholder: "Write a caption", class: "form-control border-0 text-muted ps-2", style:"resize: none"%>
@@ -78,8 +77,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer pt-5">
         </div>
       </div>
     <% end %>
