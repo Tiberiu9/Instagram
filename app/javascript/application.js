@@ -3,8 +3,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-// import "./filepond"
-import "../../vendor/filepond/filepond"
+// import "../../vendor/filepond/filepond"
 import "./custom/custom"
-import "../../vendor/javascript/filepond-plugin-image-preview"
-import '../../vendor/javascript/filepond-plugin-file-validate-type'
+// import "../../vendor/javascript/filepond-plugin-image-preview"
+// import '../../vendor/javascript/filepond-plugin-file-validate-type'

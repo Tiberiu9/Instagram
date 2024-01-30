@@ -24,11 +24,12 @@ function loadFilepond() {
   // Create a FilePond instance
   const pond = FilePond.create(inputElement, {
     credits: {},
-    // checkValidity: true,
+    // labelIdle: {'Drag & Drop yourrrrrrr files or <span class="filepond--label-action"> Browse </span>'},
     storeAsFile: true,
     allowMultiple: true,
     allowReorder: true,
     // acceptedFileTypes: ["image/*"],
-    acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp']
+    acceptedFileTypes: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp'],
+    // checkValidity: true,
   });
 }

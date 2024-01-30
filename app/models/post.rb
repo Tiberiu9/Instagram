@@ -6,5 +6,7 @@ class Post < ApplicationRecord
   # validates :images, attached: true, content_type: [:png, :jpg, :jpeg, :gif, :webp, ]
   validates :images, presence: true, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp']}
   # validates :images, presence: true, blob: { content_type: :web_image }
-  
+
+  has_many :likes
+  has_many :likers, through: :likes, source: :user
 end
