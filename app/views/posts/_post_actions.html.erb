@@ -1,13 +1,18 @@
 <%= turbo_frame_tag "post#{post.id}actions" do %>
-  <div class="d-flex justify-content-start align-items-center gap-1 py-3">
+  <div class="d-flex justify-content-start align-items-center gap-2 py-3">
     <%= button_to toggle_like_path(post_id: post.id), method: :post, style: "border: none; background: none", id: "post#{post.id}actions-likeBtn" do %>
       <i class="<%= post.likes.find_by(user: current_user) ? "fa-solid post-like-red-button" : "fa-regular" %>  fa-heart fa-xl"></i>
     <% end %>
+    <div>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#post<%= post.id %>_commentsModal" style="text-decoration:none">
+      <p class="fa-regular fa-comment fa-xl fa-flip-horizontal text-dark"> </p>
+    </a>
+    </div>
   </div>
   <a href="#" data-bs-toggle="modal" data-bs-target="#post<%= post.id %>_likesModal" style="text-decoration:none" class="text-dark">
-    <small class="fw-bold my-1 px-2">
+    <p class="fw-bold px-2 m-0 py-0" style="font-size: 14px">
       <%= pluralize(post.likes.count, "like") %>
-    </small>
+    </p>
   </a>
   <!-- Modal -->
   <div class="modal fade" id="post<%= post.id %>_likesModal" tabindex="-1" aria-labelledby="post<%= post.id %>_likesModalLabel" aria-hidden="true">
