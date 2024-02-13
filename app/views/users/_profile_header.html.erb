@@ -1,52 +1,48 @@
-<!--<div class="d-flex flex-column justify-content-center w-100">-->
-<div class="container d-flex flex-column pt-5 px-0" style=" width: 940px;">
-  <div class="mx-auto mx-sm-0">
-    <div class="container d-flex px-1 w-100 h-auto  mt-3 mb-5 align-items-center " style=" "  >
-      <div class="flex-shrink-0 my-auto px-2 ms-0 me-3 px-md-5 ms-md-3 me-md-5 " style= "" >
-        <% if user.profile_pic.attached? %>
-          <%= image_tag user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 25vw; max-width: 160px; padding: 2px; border; border-width: 3px ; border-color: red"%>
-        <% else %>
-          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 25vw; max-width: 160px; padding: 2px; border; border-width: 3px ; border-color: red"%>
-        <% end %>
-      </div>
-      <div class=" d-flex flex-column gap-4 h-auto  ">
-        <div class="d-flex flex-column flex-md-row gap-2 ">
-          <p class="m-0 me-4 fw-bold fs-5"> <%= user.username %> </p>
-          <div class=" d-flex flex-nowrap gap-2 ">
-            <button class= "btn btn-primary fw-bold py-0 px-3"> Follow </button>
-            <button class= "btn border border-1 py-0"> Message </button>
-          </div>
-        </div>
-        <div class="d-none d-md-block">
-          <div class="d-flex flex-row gap-5">
-            <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
-            <p class="fw-bold"> <%= pluralize(100, "Follower") %> </p>
-            <p class="fw-bold"> <%= pluralize(200, "Following") %> </p>
-          </div>
-        </div>
-        <div class="d-none d-md-block ">
-          <div class="aaa" style=" font-size: 14px; ">
-            <p class="fw-bold" ><%= user.full_name %></p>
-            <p><%= user.bio %></p>
-            <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
-          </div>
-        </div>
-      </div>
+<div class="mx-auto mx-sm-0">
+  <div class="container d-flex px-1 w-100 h-auto  mt-3 mb-0 mb-md-5 align-items-center " style=" "  >
+    <div class="flex-shrink-0 my-auto px-2 ms-0 me-3 px-md-5 ms-md-3 me-md-5 " style= "" >
+      <% if user.profile_pic.attached? %>
+        <%= image_tag user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 25vw; max-width: 160px; padding: 2px; border; border-width: 3px ; border-color: red"%>
+      <% else %>
+        <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 25vw; max-width: 160px; padding: 2px; border; border-width: 3px ; border-color: red"%>
+      <% end %>
     </div>
-    <div class=" mobile d-md-none p-3 ">
-      <div class="aaa" style=" font-size: 14px; ">
-        <p class="fw-bold" ><%= user.full_name %></p>
-        <p><%= user.bio %></p>
-        <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
+    <div class=" d-flex flex-column gap-4 h-auto  ">
+      <div class="d-flex flex-column flex-md-row gap-2 ">
+        <p class="m-0 me-4 fw-bold fs-5"> <%= user.username %> </p>
+        <div class=" d-flex flex-nowrap gap-2 ">
+          <button class= "btn btn-primary fw-bold py-0 px-3"> Follow </button>
+          <button class= "btn border border-1 py-0"> Message </button>
+        </div>
       </div>
-      <hr>
-      <div class="d-flex flex-row gap-5 ">
-        <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
-        <p class="fw-bold"> <%= pluralize(100, "Follower") %> </p>
-        <p class="fw-bold"> <%= pluralize(200, "Following") %> </p>
+      <div class="d-none d-md-block">
+        <div class="d-flex flex-row gap-5">
+          <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
+          <p class="fw-bold"> <%= pluralize(100, "Follower") %> </p>
+          <p class="fw-bold"> <%= pluralize(200, "Following") %> </p>
+        </div>
+      </div>
+      <div class="d-none d-md-block ">
+        <div style=" font-size: 14px; ">
+          <p class="fw-bold" ><%= user.full_name %></p>
+          <p><%= user.bio %></p>
+          <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
+        </div>
       </div>
     </div>
   </div>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est totam perferendis, cumque nam quia ducimus. Eligendi cum temp or ibus ab provident amet ullam consequatur illum ipsa eum, ut, at deserunt suscipit! </p>
+  <div class=" mobile d-md-none p-3 ">
+    <div style=" font-size: 14px; ">
+      <p class="fw-bold" ><%= user.full_name %></p>
+      <p><%= user.bio %></p>
+      <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
+    </div>
+  </div>
+  <div class=" mobile d-md-none p-3 border-top">
+    <div class="d-flex flex-row justify-content-around ">
+      <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
+      <p class="fw-bold"> <%= pluralize(100, "Follower") %> </p>
+      <p class="fw-bold"> <%= pluralize(200, "Following") %> </p>
+    </div>
+  </div>
 </div>
-<!--</div>-->

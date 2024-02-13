@@ -150,3 +150,34 @@ p {
 //   color: aquamarine;
 //   font-size: 34px;
 // }
+
+// ========================  User Profile ============================
+
+.profile-post-likes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  text-shadow: 1px 1px 10px black;
+}
+
+.multiple-images {
+  position: absolute;
+  top: 7%;
+  right: 3%;
+  transform: translate(-50%, -50%);
+  text-shadow: 1px 1px 10px black;
+}
+
+.profile-post:hover .profile-post-likes {
+  visibility: visible;
+}
+
+.posts-img-thumbnail:hover {
+  opacity: 80%;
+}
+
+#post-images:hover {
+  background-color: black;
+}
