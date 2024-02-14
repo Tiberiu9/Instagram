@@ -4,9 +4,9 @@
     <div class="d-flex justify-content-between">
       <div>
         <% if post.user.profile_pic.attached? %>
-          <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 10%; padding: 2px; border; border: 10 ; border-color: red" %>
+          <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
         <% else %>
-          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 10%; padding: 2px; border; border: 10 ; border-color: red" %>
+          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
         <% end %>
         <span class="fw-bold mx-2" style="font-size: 14px"><%= post.user.username %></span>
         <small class="text-muted"><%= time_ago_in_words(post.created_at) %></small>

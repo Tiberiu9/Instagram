@@ -19,7 +19,7 @@
     </div>
   </div>
   <div>
-    <div class="navbar-collapse fixed-bottom d-flex justify-content-around bg-white py-0 mb-1">
+    <div class="navbar-collapse fixed-bottom d-flex justify-content-around bg-white py-1 mb-0">
       <%= link_to root_path do %>
         <i class="fa-solid fa-house fa-xl text-black p-3"></i>
       <% end %>
@@ -38,9 +38,9 @@
       <%= link_to root_path do %>
         <i class="py-1 px-3">
           <% if current_user && current_user.profile_pic.attached? %>
-            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle p-0", style:"width: 25px; height:25px"%>
+            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle p-0", style:"width: 28px; height: 28px"%>
           <% else %>
-            <%= image_tag "profile-pic.jpg", class: "img-thumbnail rounded-circle p-0 border-0", style: "width: 25px; height:25px"%>
+            <%= image_tag "profile-pic.jpg", class: "img-thumbnail rounded-circle p-0 border-0", style: "width: 28px; height:28px"%>
           <% end %>
         </i>
       <% end %>
