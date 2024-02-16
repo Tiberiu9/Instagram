@@ -3,6 +3,10 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    # - to display the posts/index views
+    # @posts = Post.all
+
+    # hide posts/index amd redirect to homepage
     redirect_to root_path
   end
 
@@ -49,6 +53,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    return if current_user != @post.user
     @post.destroy!
 
     respond_to do |format|

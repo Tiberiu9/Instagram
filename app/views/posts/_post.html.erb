@@ -14,14 +14,16 @@
         <small class="text-muted"><%= time_ago_in_words(post.created_at) %></small>
       </div>
       <div>
-        <div class="dropdown">
-          <a class="text-decoration-none text-dark fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ...
-          </a>
-          <ul class="dropdown-menu">
-            <li> <%= button_to 'Delete post', post, method: :delete, class: "dropdown-item" %></li>
-          </ul>
-        </div>
+        <% if current_user == post.user %>
+          <div class="dropdown">
+            <a class="text-decoration-none text-dark fs-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ...
+            </a>
+            <ul class="dropdown-menu">
+              <li> <%= button_to 'Delete post', post, method: :delete, class: "dropdown-item" %></li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
