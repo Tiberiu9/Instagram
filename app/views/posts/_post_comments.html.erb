@@ -5,7 +5,12 @@
     </a>
   <% end %>
   <% post.comments.last(1).each do |comment| %>
-    <p class="card-text pt-1 px-2 m-0 text-break" style="font-size: 14px"><span class="fw-bold"> <%= comment.user.username%></span > <%= comment.body %></p>
+    <p class="card-text pt-1 px-2 m-0 text-break" style="font-size: 14px">
+      <%= link_to comment.user, class: "text-decoration-none text-dark" do %>
+        <span class="fw-bold"> <%= comment.user.username%> </span >
+      <% end %>
+      <%= comment.body %>
+    </p>
   <% end %>
   <!-- Modal -->
   <div class="modal fade" id="post<%= post.id %>_commentsModal" tabindex="-1" aria-labelledby="post<%= post.id %>_commentsModalLabel" aria-hidden="true">
@@ -15,7 +20,7 @@
           <h1 class="modal-title fs-5 ms-auto" id="post<%= post.id %>_commentsModalLabel">Post comments</h1>
           <button type="button" class="btn-close m-0 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" style="height:90vh; overflow: scroll">
+        <div class="modal-body" style="height: 88vh; overflow: scroll">
           <% post.comments.each do |comment| %>
             <%= render 'posts/modal_comment', comment: comment %>
           <% end %>

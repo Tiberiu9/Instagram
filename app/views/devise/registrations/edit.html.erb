@@ -2,16 +2,16 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="container-fluid card d-flex flex-row my-3 px-0">
-      <div class="w-25 d-flex flex-column border-end ">
+      <div class="w-25 d-flex flex-column border-end">
         <a href="#" class="active p-3 profile-edit-btn">Edit Profile</a>
       </div>
-      <div class="w-75 d-flex flex-column mx-auto p-4 ">
-        <div class=" w-50 d-flex flex-column justify-content-center mx-auto">
+      <div class="w-75 d-flex flex-column mx-auto py-4 px-0 ">
+        <div class=" d-flex flex-column justify-content-center mx-auto">
           <div class="d-flex justify-content-between">
             <p class=" fs-4 mb-5 fw-bold">Edit profile</p>
-            <div class="form-check mt-2">
-            <%= f.check_box :private, class:"form_check-input" %>
-            <%= f.label :private_account, class: "form check-label fw-bold" %>
+            <div class="form-check mt-2 flex-shrink-0">
+              <%= f.check_box :private, class:"form_check-input" %>
+              <%= f.label :private_account, class: "form check-label fw-bold" %>
             </div>
           </div>
           <div class="d-flex align-items-center w-100 border rounded-4">
@@ -22,10 +22,10 @@
             <% end %>
             <div class="d-flex flex-row justify-content-between mx-3 w-100 ">
               <div>
-              <p class="fw-bold" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 10rem"> <%= resource.username %></p>
+                <p class="fw-bold py-4  " style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 10rem; line-height: 2.0"> <%= resource.username %></p>
               </div>
               <div>
-              <p> <%= f.file_field :profile_pic, class: "form-control form-control-sm" %> </p>
+                <p> <%= f.file_field :profile_pic, class: "form-control form-control-sm my-4"%> </p>
               </div>
             </div>
           </div>
@@ -88,30 +88,29 @@
     </div>
   <% end %>
 </div>
-
 <!--
     <div class="field">
       <%#= f.label :email %><br />-->
-      <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
 <!--    </div>-->
-    <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+<%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 <!--      <div>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></div>-->
-    <%# end %>
+<%# end %>
 <!--    <div class="field">-->
-      <%#= f.label :password %><!-- <i>(leave blank if you don't want to change it)</i><br />-->
-      <%#= f.password_field :password, autocomplete: "new-password" %>
-      <%# if @minimum_password_length %>
+<%#= f.label :password %><!-- <i>(leave blank if you don't want to change it)</i><br />-->
+<%#= f.password_field :password, autocomplete: "new-password" %>
+<%# if @minimum_password_length %>
 <!--        <br />
         <em><%#= @minimum_password_length %> characters minimum</em>
       <%# end %>-->
 <!--    </div>
     <div class="field">
       <%#= f.label :password_confirmation %><br />-->
-      <%#= f.password_field :password_confirmation, autocomplete: "new-password" %>
+<%#= f.password_field :password_confirmation, autocomplete: "new-password" %>
 <!--    </div>
     <div class="field">
       <%#= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />-->
-      <%#= f.password_field :current_password, autocomplete: "current-password" %>
+<%#= f.password_field :current_password, autocomplete: "current-password" %>
 <!--    </div>
     <div class="actions">
       <%#= f.submit "Update" %>-->
@@ -120,4 +119,3 @@
   <h3>Cancel my account</h3>
   <div>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
   <%#= link_to "Back", :back %>-->
-

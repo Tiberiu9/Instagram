@@ -55,15 +55,15 @@
       </li>
       <li class="nav-item">
         <% if current_user && current_user.profile_pic.attached? %>
-          <a href="#" class="nav-link text-black text-center text-xxl-start py-1 my-2 " aria-current="page">
-            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle p-0", style: "width: 1.8rem; height: 1.8rem" %> 
-            <span class="ms-2 d-none d-xxl-inline">Profile</span>
-          </a>
+          <%= link_to user_path(current_user), class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle p-0", style: "width: 1.7rem; height: 1.7rem" %> 
+            <span class="ms-1 d-none d-xxl-inline">Profile</span>
+          <% end %>
         <% else %>
-          <a href="#" class="nav-link text-black text-center text-xxl-start py-1 my-2 " aria-current="page">
-            <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0", style: "width: 1.8rem" %> 
-            <span class="ms-2 d-none d-xxl-inline">Profile</span>
-          </a>
+          <%= link_to user_path(current_user), class: "nav-link text-black text-center text-xxl-start py-2 my-2" do %>
+            <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0", style: "width: 1.7rem" %> 
+            <span class="ms-1 d-none d-xxl-inline">Profile</span>
+          <% end %>
         <% end %>
       </li>
     </ul>
@@ -73,11 +73,9 @@
       <a class="btn border-0 outline-none text-black" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-bars fa-xl"></i><span class="ms-2 d-none d-xxl-inline">More</span>
       </a>
-      <div class="dropdown-menu shadow" aria-labelledby="triggerId">
-        <a class="dropdown-item" href="#">Profile</a>
-        <a class="dropdown-item" href="#">Settings</a>
-        <a class="dropdown-item" href="#">Settings</a>
-        <%= button_to "Log out",  destroy_user_session_path, class: "dropdown-item", method: :delete%>
+      <div class="dropdown-menu shadow w-100 rounded-4" aria-labelledby="triggerId">
+        <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+        <%= button_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete%>
       </div>
     </div>
   </div>

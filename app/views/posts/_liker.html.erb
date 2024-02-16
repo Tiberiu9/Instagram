@@ -4,7 +4,11 @@
       <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0 border", style: "width: 3.1rem" %>
     </div>
     <div class="m-auto ms-3">
-      <p class="story-username" style="max-width: 12rem; margin-bottom: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 14px sans-serif; font-weight:bold"><%= liker.username %></p>
+      <p class="story-username" style="max-width: 12rem; margin-bottom: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 14px sans-serif; font-weight:bold">
+        <%= link_to liker, class: "text-decoration-none text-dark" do %>
+          <%= liker.username %>
+        <% end %>
+      </p>
       <!--<p class="m-0 text-muted" style="font: 12px sans-serif; max-width: 12rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Instagram Recoooooooooooooooooooommended</p>-->
     </div>
   </div>

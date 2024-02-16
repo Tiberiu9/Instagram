@@ -1,4 +1,4 @@
-// ======================= General ==========================
+// ========================== General ==============================
 
 p {
   margin-bottom: 0px;
@@ -46,9 +46,9 @@ p {
 //   // max-height: 100%;
 // }
 
-// ==================== Mobile Navbar =======================
+// ======================== Mobile Navbar =============================
 
-// ====================== Side Navbar ========================
+// ========================= Side Navbar ==============================
 
 #navbar-logo:hover,
 #navbar-icon:hover,
@@ -57,7 +57,7 @@ p {
   background-color: #f2f2f2;
 }
 
-// ====================== Log In page ========================
+// ========================== Log In page ============================
 
 .card-img-top {
   max-width: 50%;
@@ -86,7 +86,7 @@ p {
   margin-right: 0.5rem;
 }
 
-// ======================= Posts Section ==========================
+// ===================== Posts(Home) Section ========================
 
 // .story-username {
 //   // max-width: 3.5rem;
@@ -144,7 +144,7 @@ p {
   width: 100%;
 }
 
-// ====================  Suggestions Section ====================
+// ====================== Suggestions Section =======================
 
 // .suggestions-text {
 //   color: aquamarine;
@@ -153,7 +153,19 @@ p {
 
 // ========================  User Profile ============================
 
-.profile-post-likes {
+// -------------------- profile header ---------------------
+.profile-message-btn,
+.edit-profile-btn {
+  background-color: rgb(239, 239, 239);
+}
+
+.profile-message-btn,
+.edit-profile-btn:hover {
+  background-color: rgb(219, 219, 219);
+}
+
+// -------------------- profile posts ---------------------
+.profile-post-likes-count {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -170,7 +182,7 @@ p {
   text-shadow: 1px 1px 10px black;
 }
 
-.profile-post:hover .profile-post-likes {
+.profile-post:hover .profile-post-likes-count {
   visibility: visible;
 }
 
@@ -182,7 +194,7 @@ p {
   background-color: black;
 }
 
-// ------------------------ User Profile Edit ----------------------------
+// =================== User Profile Edit page =========================
 
 .profile-edit-btn {
   text-decoration: none;

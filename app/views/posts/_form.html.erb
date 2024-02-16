@@ -28,9 +28,9 @@
             <% end %>
             <div class="my-2 ms-2">
               <% if current_user.profile_pic.attached? %>    <%# if current_user && current_user.profile_pic.attached? %>
-                <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 10%" %>
+                <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 30px; height: 30px" %>
               <% else %>
-                <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 10%"%>
+                <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle border-0 p-0", style: "width: 30px; height: 30px" %>
               <% end %>
               <span class="fw-bold mx-2" style="font-size: 14px"><%= current_user.username %></span>    <!--current_user.username-->
             </div>

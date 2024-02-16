@@ -3,12 +3,14 @@
   <div class="card-header bg-white py-2 px-2 " style="">   <!--w-100-->
     <div class="d-flex justify-content-between">
       <div>
-        <% if post.user.profile_pic.attached? %>
-          <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
-        <% else %>
-          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
+        <%= link_to post.user, class: "text-decoration-none text-dark" do %>
+          <% if post.user.profile_pic.attached? %>
+            <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
+          <% else %>
+            <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
+          <% end %>
+          <span class="fw-bold mx-2" style="font-size: 14px"><%= post.user.username %></span>
         <% end %>
-        <span class="fw-bold mx-2" style="font-size: 14px"><%= post.user.username %></span>
         <small class="text-muted"><%= time_ago_in_words(post.created_at) %></small>
       </div>
       <div>
@@ -17,8 +19,7 @@
             ...
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Edit post</a></li>
-            <li><a class="dropdown-item" href="#">Delete Post</a></li>
+            <li> <%= button_to 'Delete post', post, method: :delete, class: "dropdown-item" %></li>
           </ul>
         </div>
       </div>
@@ -48,8 +49,11 @@
       </button>
     </div>
     <%= render 'posts/post_actions', post: post %>
-    <div class="card-text px-2 pt-1 text-dark " style="font-size: 15px"><span class="fw-bold"><%= post.user.username %>
-      </span><%= post.caption %>
+    <div class="card-text px-2 pt-1 text-dark " style="font-size: 15px">
+      <%= link_to post.user, class: "text-decoration-none text-dark" do %>
+        <span class="fw-bold"><%= post.user.username %></span>
+      <% end %>
+      <%= post.caption %>
     </div>
     <%= render 'posts/post_comments', post: post %>
   </div>
