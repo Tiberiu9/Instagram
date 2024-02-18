@@ -2,10 +2,10 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="container-fluid card d-flex flex-row my-3 px-0">
-      <div class="w-25 d-flex flex-column border-end">
+      <div class="d-flex flex-column border-end" style="width: 20%">
         <a href="#" class="active p-3 profile-edit-btn">Edit Profile</a>
       </div>
-      <div class="w-75 d-flex flex-column mx-auto py-4 px-0 ">
+      <div class="d-flex flex-column mx-auto py-4 px-0" style="width: 80%">
         <div class=" d-flex flex-column justify-content-center mx-auto">
           <div class="d-flex justify-content-between">
             <p class=" fs-4 mb-5 fw-bold">Edit profile</p>
