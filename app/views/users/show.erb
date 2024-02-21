@@ -1,6 +1,6 @@
 <div class="container d-flex flex-column pt-5 px-0" style=" width: 940px;">
   <%= render 'users/profile_header', user: @user %>
-  <% if !@user.private || @user == current_user %>
+  <% if !@user.private || @user == current_user || current_user.followings.include?(@user) %>
     <%= render 'users/profile_posts', user: @user %>
   <% else %>
     <%= render 'users/profile_private' %>
