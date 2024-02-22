@@ -49,8 +49,8 @@
   <div class=" mobile d-md-none p-3 border-top">
     <div class="d-flex flex-row justify-content-around ">
       <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
-      <p class="fw-bold"> <%= pluralize(100, "Follower") %> </p>
-      <p class="fw-bold"> <%= pluralize(200, "Following") %> </p>
+      <p class="fw-bold"> <%= pluralize(user.followers.count, "Follower") %> </p>
+      <p class="fw-bold"> <%= pluralize(user.followings.count, "Following") %> </p>
     </div>
   </div>
 </div>

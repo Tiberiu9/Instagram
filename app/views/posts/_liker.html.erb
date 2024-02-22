@@ -1,20 +1,21 @@
 <div class="d-flex justify-content-between my-3">
   <div class="d-flex flex-row">
     <div>
-      <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0 border", style: "width: 3.1rem" %>
+      <% if liker.profile_pic.attached? %>
+        <%= image_tag liker.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+      <% else %>
+        <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+      <% end %>
     </div>
     <div class="m-auto ms-3">
       <p class="story-username" style="max-width: 12rem; margin-bottom: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 14px sans-serif; font-weight:bold">
-        <%= link_to liker, class: "text-decoration-none text-dark" do %>
+        <%= link_to liker, class: "text-decoration-none text-dark", data: {turbo: "false"} do %>
           <%= liker.username %>
         <% end %>
       </p>
-      <!--<p class="m-0 text-muted" style="font: 12px sans-serif; max-width: 12rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Instagram Recoooooooooooooooooooommended</p>-->
     </div>
   </div>
   <div>
-    <%= link_to root_path, class:"btn btn-primary", style:"text-decoration:none" do%>
-      <small class="fw-bold text-primary text-white">Follow</small>
-    <% end %>
+    <%= render 'layouts/shared/follow_state', user: liker %>
   </div>
 </div>

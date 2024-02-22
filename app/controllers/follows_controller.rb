@@ -4,27 +4,28 @@ class FollowsController < ApplicationController
 
   def follow
     current_user.follow(@user)
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to posts_path
   end
 
   def cancel_request
     current_user.cancel_request(@user)
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to root_path
   end
 
   def unfollow
     current_user.unfollow(@user)
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to root_path
   end
 
   def accept_follow
     @follow_req.accept
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to root_path
   end
 
   def decline_follow
     @follow_req.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back_or_to root_path
+    # redirect_back(fallback_location: root_path)
   end
 
   private

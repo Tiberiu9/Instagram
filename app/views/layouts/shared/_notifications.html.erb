@@ -1,0 +1,82 @@
+<button class="btn border-0 outline-none text-black nav-link text-center text-xxl-start py-3" id="navbar-notifications-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+  <i class="fa-regular fa-heart fa-xl"></i><span class="d-none d-xxl-inline" style="margin-left: 18px;">Notifications</span>
+</button>
+<div class="offcanvas offcanvas-start border border-start z-1" style="margin-left: 64px; border-radius: 0px 26px 26px 0px; box-shadow: rgba(74, 87, 75, 0.150) 6px 0px 7px 0px;" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold fs-4" id="offcanvasScrollingLabel">Notifications</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-1">
+    <p class="fw-bold">Pending requests</p>
+    <!--before accept-->
+    <% current_user.follow_requests.each do |fr| %>
+      <div class="d-flex justify-content-between my-3 ms-1">
+        <div class="d-flex">
+          <div style= "width: 46px; height: 46px; flex-shrink: 0">
+            <% if fr.follower.profile_pic.attached? %>
+              <%= image_tag fr.follower.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+            <% else %>
+              <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+            <% end %>
+          </div>
+          <div class="m-auto ms-3">
+            <p class="card-text mb-0 px-0 text-break" style="font-size: 15px">
+              <%= link_to fr.follower, class: "text-decoration-none text-dark" do %>
+                <span class="fw-bold"> <%= fr.follower.username %> </span>
+              <% end %>
+            </p>
+            <p class="text-muted" style="font-size: 14px">
+              <span>Has sent the follow request
+                <%= time_ago_in_words(fr.created_at) %>
+                ago </span>
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-1">
+          <div>
+            <%= link_to accept_follow_path(follow_id: fr.id), method: :post, class:"btn btn-primary", style:"text-decoration:none;" do%>
+              <small class="fw-bold text-primary text-white py-0">Accept</small>
+            <% end %>
+          </div>
+          <div>
+            <%= button_to decline_follow_path(follow_id: fr.id), method: :delete, class:"btn btn-danger", style:"text-decoration:none;" do%>
+              <small class="fw-bold text-primary text-white py-0">Decline</small>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+    <p class="fw-bold">Followers</p>
+    <!--after accept-->
+    <% current_user.accepted_received_requests.each do |afr| %>
+      <div class="d-flex justify-content-between my-3 ms-1">
+        <div class="d-flex">
+          <div style= "width: 46px; height: 46px; flex-shrink: 0">
+            <% if afr.follower.profile_pic.attached? %>
+              <%= image_tag afr.follower.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+            <% else %>
+              <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+            <% end %>
+          </div>
+          <div class="m-auto ms-3">
+            <p class="card-text mb-0 px-0 text-break" style="font-size: 15px">
+              <%= link_to afr.follower, class: "text-decoration-none text-dark", data: {turbo: "false"} do %>
+                <span class="fw-bold"> <%= afr.follower.username %> </span>
+              <% end %>
+            </p>
+            <p class="text-muted" style="font-size: 14px">
+              <span>Started following you
+                <%= time_ago_in_words(afr.created_at) %>
+                ago </span>
+            </p>
+          </div>
+        </div>
+        <div class="mt-2" >
+          <%= render 'layouts/shared/follow_state', user: afr.follower %>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+  </div>
+</div>

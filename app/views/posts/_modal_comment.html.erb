@@ -1,12 +1,16 @@
 <div id="post<%= comment.post_id %>ModalComment<%= comment.id %>">
   <div class="d-flex justify-content-between my-3">
     <div class="d-flex">
-      <div style= "width: 40px; height: 40px; flex-shrink: 0">
-        <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle p-0 border", style: "width: 39px; height: 39px " %>
+      <div style= "width: 46px; height: 46px; flex-shrink: 0">
+        <% if comment.user.profile_pic.attached? %>
+          <%= image_tag comment.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+        <% else %>
+          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+        <% end %>
       </div>
       <div class="m-auto ms-3 ">
         <p class="card-text mb-0 px-2 text-break" style="font-size: 15px">
-          <%= link_to comment.user, class: "text-decoration-none text-dark" do %>
+          <%= link_to comment.user, class: "text-decoration-none text-dark", data: {turbo: "false"} do %>
             <span class="fw-bold"> <%= comment.user.username%> </span>
           <% end %>
           <%= comment.body %>
