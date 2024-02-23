@@ -2,12 +2,12 @@
   <div class="d-flex justify-content-between">
     <p class="text-muted mb-3">Suggested for you</p>
     <%= link_to root_path, style:"text-decoration:none" do %>
-      <small class="fw-bold text-black">See All</small>
+      <small class="fw-bold text-black pe-2 me-1">See All</small>
     <% end %>
   </div>
-  <div class="d-flex flex-column gap-3">
-    <% (1..5).each do %>
-      <%= render 'suggestions/suggestion' %>
+  <div class="d-flex flex-column">
+    <% suggestions.each do |suggestion| %>
+      <%= render 'suggestions/suggestion', suggestion: suggestion %>
     <% end %>
   </div>
 </div>
