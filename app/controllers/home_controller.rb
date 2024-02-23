@@ -2,13 +2,17 @@ class HomeController < ApplicationController
   before_action :set_suggestions
   before_action :set_feeds
   def index
-    # show all post
-    @posts = Post.all
-    # show current user posts
+    ## show all post
+    # @posts = Post.all
+    ## show current user posts
     # @posts = current_user.posts if user_signed_in?
   end
 
   private
+
+  def set_feeds
+    @feeds = Post.where(user: [current_user, current_user.followings].flatten).order(created_at: :desc)
+    end
 
   def set_suggestions
     @suggestions = [current_user.followers] 

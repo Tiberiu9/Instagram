@@ -4,7 +4,7 @@ class FollowsController < ApplicationController
 
   def follow
     current_user.follow(@user)
-    redirect_back_or_to posts_path
+    redirect_back_or_to root_path
   end
 
   def cancel_request
@@ -25,7 +25,6 @@ class FollowsController < ApplicationController
   def decline_follow
     @follow_req.destroy
     redirect_back_or_to root_path
-    # redirect_back(fallback_location: root_path)
   end
 
   private

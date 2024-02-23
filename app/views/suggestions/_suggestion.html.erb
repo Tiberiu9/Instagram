@@ -19,8 +19,8 @@
   </div>
   <div class="my-auto">
     <% if current_user.waiting_followings.include?(suggestion) %>
-      <%= button_to cancel_request_path(user_id: suggestion.id), method: :delete, class:"btn bg-transparent border-0 p-0 ", data: {turbo: "false"} do %>
-        <small class="fw-bold text-secondary p-0">Cancel</small>
+      <%= button_to cancel_request_path(user_id: suggestion.id), method: :delete, class:"btn bg-transparent border-0", data: {turbo: "false"} do %>
+        <small class="fw-bold text-secondary">Cancel</small>
       <% end %>
     <% else %>
       <%= button_to follow_path(user_id: suggestion.id), method: :post, class:"btn bg-transparent border-0", data: {turbo: "false"} do %>
