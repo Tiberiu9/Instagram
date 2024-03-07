@@ -2,6 +2,7 @@
 // Entry point for the build script in your package.json
 import "@hotwired/turbo-rails"
 import "./controllers"
+import "./controllers/search_results_controller"
 import * as bootstrap from "bootstrap"
 // import "../../vendor/filepond/filepond"
 import "./custom/custom"

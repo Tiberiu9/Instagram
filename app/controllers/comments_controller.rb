@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
         render turbo_stream: turbo_stream.replace(
           "post#{@post.id}comments",
           partial: "posts/post_comments",
+          # "post#{@post.id}commentsModal2",
+          # partial: "posts/post_comments_modal",
           locals: {post: @post}
         )
       end

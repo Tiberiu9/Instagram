@@ -1,0 +1,19 @@
+<div class="col-lg-4 col-md-6 g-0 gy-1 g-sm-1 profile-post" style="height: 20rem; position: relative;">
+  <div id="post-images">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#post<%= post.id %>_commentsModal" style="text-decoration:none">
+      <%= image_tag post.images.first, class:"posts-img-thumbnail", style: "width: 100%; height: 20rem; object-fit: cover; border: 0px; padding: 0px; border-radius: 0px;"%>
+    </a>
+    <%= render 'posts/post_comments_modal', post: post %>
+  </div>
+  <div class="profile-post-likes-count">
+    <i class="fa-solid fa-heart fa-xl text-white " ></i>
+    <small class="text-white fw-bold"> <%= post.likes.count %> &emsp; </small>
+    <i class="fa-solid fa-comment fa-xl fa-flip-horizontal text-white " ></i>
+    <small class="text-white fw-bold"> <%= post.comments.count %> </small>
+  </div>
+  <div>
+    <% if post.images.count > 1 %>
+      <i class=" fa-solid fa-images text-white multiple-images "></i>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div>
+  <%= form_with(url: users_path, method: :get, data: {turbo_frame: "search_results", controller: "search-results"}, class: "d-flex") do |f| %>
+    <div class="dropdown-center mx-auto">
+      <%= f.text_field :search_query, class: "form-control border-0 px-0 mx-auto", type: "search", placeholder: "  Search", "aria-label" => "Search", style: "background: #efefef; max-width: 388px; min-width: 180px ", "data-bs-toggle" => "dropdown", "aria-expand" => "false", data: {action: "input->search-results#search"} %>
+      <div class="dropdown-menu rounded-3 mt-2" style="width: 398px" >
+        <%#= render 'layouts/shared/search_results', users: [] %>
+      </div>
+    </div>
+  <% end %>
+</div>

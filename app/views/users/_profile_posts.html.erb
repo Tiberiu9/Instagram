@@ -7,24 +7,7 @@
   </div>
   <div class="row align-items-center border-0">
     <% user.posts.reverse_each do |post| %>
-      <div class="col-lg-4 col-md-6  g-1 profile-post" style="height: 20rem; position: relative;">
-        <%= link_to post do %>
-          <div id="post-images">
-            <%= image_tag post.images.first, class:"posts-img-thumbnail g-1", style: "width: 100%; height: 20rem; object-fit: cover; border: 0px; padding: 0px; border-radius: 0px; " %>
-          </div>
-          <div class="profile-post-likes-count">
-            <i class="fa-solid fa-heart fa-xl text-white " ></i>
-            <small class="text-white fw-bold"> <%= post.likes.count %> &emsp; </small>
-            <i class="fa-solid fa-comment fa-xl fa-flip-horizontal text-white " ></i>
-            <small class="text-white fw-bold"> <%= post.comments.count %> </small>
-          </div>
-          <div>
-            <% if post.images.count > 1 %>
-              <i class=" fa-solid fa-images text-white multiple-images "></i>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+    <%= render 'users/posts_images', post: post %>
     <% end %>
   </div>
 </div>

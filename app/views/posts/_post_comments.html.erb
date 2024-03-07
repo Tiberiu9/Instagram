@@ -1,31 +1,17 @@
 <%= turbo_frame_tag "post#{post.id}comments" do %>
-  <% if post.comments.count > 0 %>
-    <a href="#" data-bs-toggle="modal" data-bs-target="#post<%= post.id %>_commentsModal" style="text-decoration:none">
-      <p class="text-muted px-2 pt-1 m-0" style="font-size: 14px">View all <%= pluralize(post.comments.count, "comments")%> </p>
-    </a>
-  <% end %>
-  <% post.comments.last(1).each do |comment| %>
-    <p class="card-text pt-1 px-2 m-0 text-break" style="font-size: 14px">
-      <%= link_to comment.user, class: "text-decoration-none text-dark", data: {turbo: "false"} do %>
-        <span class="fw-bold"> <%= comment.user.username%> </span >
-      <% end %>
-      <%= comment.body %>
-    </p>
-  <% end %>
-  <!-- Modal -->
-  <div class="modal fade" id="post<%= post.id %>_commentsModal" tabindex="-1" aria-labelledby="post<%= post.id %>_commentsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" >
-      <div class="modal-content">
-        <div class="modal-header p-1  d-flex">
-          <h1 class="modal-title fs-5 ms-auto" id="post<%= post.id %>_commentsModalLabel">Post comments</h1>
-          <button type="button" class="btn-close m-0 ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" style="height: 88vh; overflow: scroll">
-          <% post.comments.each do |comment| %>
-            <%= render 'posts/modal_comment', comment: comment %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <div>
+    <% if post.comments.count > 0 %>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#post<%= post.id %>_commentsModal" style="text-decoration:none">
+        <p class="text-muted px-2 pt-1 m-0" style="font-size: 14px">View all <%= pluralize(post.comments.count, "comments")%> </p>
+      </a>
+      <%= render 'posts/post_comments_modal', post: post %>
+    <% end %>
+    
   </div>
+  <!-- Modal -->
 <% end %>
+<!--<script>
+  document.getElementById("post<%#= post.id %>_images_modal").addEventListener("dblclick", function(){
+    document.getElementById("post<%#= post.id %>actions-likeBtn").click();
+  })
+</script>-->

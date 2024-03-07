@@ -1,0 +1,6 @@
+<div class="card-text px-2 pt-1 text-dark " style="font-size: 15px">
+  <%= link_to post.user, class: "text-decoration-none text-dark" do %>
+    <span class="fw-bold"><%= post.user.username %></span>
+  <% end %>
+  <%= post.caption %>
+</div>

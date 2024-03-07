@@ -1,0 +1,27 @@
+<div class="card-header bg-white py-2 px-1 w-100" style="">   <!--w-100-->
+  <div class="d-flex justify-content-between">
+    <div>
+      <%= link_to post.user, class: "text-decoration-none text-dark" do %>
+        <% if post.user.profile_pic.attached? %>
+          <%= image_tag post.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
+        <% else %>
+          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
+        <% end %>
+        <span class="fw-bold mx-2" style="font-size: 14px"><%= post.user.username %></span>
+      <% end %>
+      <small class="text-muted"><%= time_ago_in_words(post.created_at) %></small>
+    </div>
+    <div class="my-auto">
+      <% if current_user == post.user %>
+        <div class="dropdown">
+          <a class="text-decoration-none text-dark fs-6" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            &#x2022 &#x2022 &#x2022
+          </a>
+          <ul class="dropdown-menu">
+            <li> <%= button_to 'Delete post', post, method: :delete, class: "dropdown-item" %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

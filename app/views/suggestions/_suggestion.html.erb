@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between my-1">
   <div class="d-flex">
-    <div>
+    <div  style= "width: 46px; height: 46px; flex-shrink: 0">
       <%#= image_tag suggestion.profile_pic.attached? ? suggestion.profile_pic : "profile-pic.png", class: "img-thumbnail rounded-circle p-0 border", style: "width: 3.1rem; height: 3.1rem" %>
       <% if suggestion.profile_pic.attached? %>
         <%= image_tag suggestion.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
@@ -14,7 +14,9 @@
           <%= suggestion.username %>
         <% end %>
       </p>
-      <p class="m-0 text-muted" style="font: 12px sans-serif; max-width: 12rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Instagram Recommended</p>
+      <p class="m-0 text-muted" style="font: 12px sans-serif; max-width: 12rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+        <%= @random_message.sample() %>
+      </p>
     </div>
   </div>
   <div class="my-auto">

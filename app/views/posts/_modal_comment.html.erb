@@ -3,12 +3,12 @@
     <div class="d-flex">
       <div style= "width: 46px; height: 46px; flex-shrink: 0">
         <% if comment.user.profile_pic.attached? %>
-          <%= image_tag comment.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+          <%= image_tag comment.user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
         <% else %>
-          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
+          <%= image_tag "profile-pic.png", class: "img-thumbnail rounded-circle", style: "width: 40px; height: 40px; padding: 2px; border; border-width: 2px; border-color: red" %>
         <% end %>
       </div>
-      <div class="m-auto ms-3 ">
+      <div class="m-auto ms-0 ">
         <p class="card-text mb-0 px-2 text-break" style="font-size: 15px">
           <%= link_to comment.user, class: "text-decoration-none text-dark", data: {turbo: "false"} do %>
             <span class="fw-bold"> <%= comment.user.username%> </span>

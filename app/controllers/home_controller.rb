@@ -6,6 +6,8 @@ class HomeController < ApplicationController
     # @posts = Post.all
     ## show current user posts
     # @posts = current_user.posts if user_signed_in?
+    # suggestion message
+    @random_message = ["Popular", "New to Instagram", "Instagram Recommended"]
   end
 
   private
