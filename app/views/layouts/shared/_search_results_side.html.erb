@@ -1,8 +1,8 @@
-<%= turbo_frame_tag "search_results_side" do %>
+<%= turbo_frame_tag "side_turbo_search_results" do %>
   <% users.each do |u| %>
     <div class="d-flex justify-content-between my-3 ms-1">
       <div class="d-flex">
-        <div style= "width: 46px; height: 46px; flex-shrink: 0">
+        <div style="width: 46px; height: 46px; flex-shrink: 0">
           <% if u.profile_pic.attached? %>
             <%= image_tag u.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 46px; height: 46px; padding: 0px;" %>
           <% else %>
@@ -11,15 +11,15 @@
         </div>
         <div class="m-auto ms-3">
           <p class="card-text mb-0 px-0 text-break" style="font-size: 15px">
-            <%= link_to u, class: "text-decoration-none text-dark", data: {turbo: false} do %>
+            <%= link_to u, class: "text-decoration-none text-dark", data: { turbo: false } do %>
               <span class="fw-bold"> <%= u.username %> </span>
             <% end %>
           </p>
           <p class="text-muted" style="font-size: 14px">
             <% if current_user.followings.include?(u) %>
-            <span> <%= u.full_name %> &#x2022 Following </span>
+              <span> <%= u.full_name %> &#x2022 Following </span>
             <% else %>
-            <span> <%= u.full_name %> &#x2022 <%= u.followers.count %> followers </span>
+              <span> <%= u.full_name %> &#x2022 <%= u.followers.count %> followers </span>
             <% end %>
           </p>
         </div>

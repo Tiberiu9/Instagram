@@ -8,16 +8,17 @@
   </div>
   <div class="offcanvas-body px-1">
     <div>
-      <%= form_with(url: users_path, method: :get, data: {turbo_frame: "search_results", controller: "search-results"}, class: "d-flex") do |f| %>
+      <%= form_with(url: users_path, method: :get, data: { turbo_frame: "side_turbo_search_results", controller: "search-results" }, class: "d-flex") do |f| %>
         <div class="dropdown-center mx-auto">
-          <%= f.text_field :search_query, class: "form-control border-0 px-0 mx-auto", type: "search", placeholder: "  Search", "aria-label" => "Search", style: "background: #efefef; max-width: 388px; min-width: 180px ", "data-bs-toggle" => "dropdown", "aria-expand" => "false", data: {action: "input->search-results#search"} %>
-          <div class="dropdown-menu rounded-3 mt-2" style="width: 398px" >
-            <%= render 'layouts/shared/search_results', users: [] %>
-          </div>
+          <%= f.text_field :search_query, class: "form-control border-0 px-0 mx-auto", type: "search", placeholder: "  Search", "aria-label" => "Search", style: "background: #efefef; width: 360px; min-width: 180px ", "data-bs-toggle" => "dropdown", "aria-expand" => "false", data: { action: "input->search-results#search" } %>
+          <%= f.hidden_field :tag_name, value: 'side_nav_search_form' %>
+          <!--<div class="dropdown-menu rounded-3 mt-2" style="width: 398px">-->
+            <%= render 'layouts/shared/search_results_side', users: [] %>
+          <!--</div>-->
         </div>
       <% end %>
     </div>
-    
+
     <hr>
     <p class="fw-bold">Recent</p>
   </div>

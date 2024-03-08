@@ -9,10 +9,13 @@ class UsersController < ApplicationController
     end
 
     if turbo_frame_request?
-      render partial: "layouts/shared/search_results", locals: {users: @users}
-      # render partial: "layouts/shared/search_results_side", locals: {users: @users}
+      if params[:tag_name] == 'side_nav_search_form'
+        render partial: "layouts/shared/search_results_side", locals: { users: @users }
+      else
+        render partial: "layouts/shared/search_results_top", locals: {users: @users}
+      end
     end
-    
+
   end
 
   def show
