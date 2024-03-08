@@ -110,6 +110,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dockerfile-rails (1.6.6)
+      rails (>= 3.0.0)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
@@ -276,6 +278,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9, >= 4.9.3)
+  dockerfile-rails (>= 1.6)
   importmap-rails (~> 2.0)
   jbuilder
   jsbundling-rails

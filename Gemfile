@@ -73,3 +73,4 @@ end
 gem "importmap-rails", "~> 2.0"
 gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'activestorage-validator'
+gem "dockerfile-rails", ">= 1.6", :group => :development

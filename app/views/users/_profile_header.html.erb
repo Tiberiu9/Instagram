@@ -1,4 +1,4 @@
-<div class="mx-auto mx-sm-0">
+<div class="">
   <div class="container d-flex px-1 w-100 h-auto  mt-3 mb-0 mb-md-5 align-items-center " style=" "  >
     <div class="flex-shrink-0 my-auto px-2 ms-0 me-3 px-md-5 ms-md-3 me-md-5 " style= "" >
       <% if user.profile_pic.attached? %>
@@ -27,14 +27,13 @@
         <div class="d-flex flex-row gap-5">
           <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
           <p class="fw-bold"> <%= pluralize(user.followers.count, "Follower") %> </p>
-          <p class="fw-bold"> <%= pluralize(user.followings.count, "Following") %> </p>
+          <p class="fw-bold"> <%= "#{user.followings.count} Following" %> </p>
         </div>
       </div>
       <div class="d-none d-md-block ">
         <div style=" font-size: 14px; ">
           <p class="fw-bold" ><%= user.full_name %></p>
           <p><%= user.bio %></p>
-          <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
         </div>
       </div>
     </div>
@@ -43,14 +42,13 @@
     <div style=" font-size: 14px; ">
       <p class="fw-bold" ><%= user.full_name %></p>
       <p><%= user.bio %></p>
-      <p>✨look for the magic all around you✨ co-founder of @caliwater @knowbeauty @thomasashbourne</p>
     </div>
   </div>
   <div class=" mobile d-md-none p-3 border-top">
     <div class="d-flex flex-row justify-content-around ">
       <p class="fw-bold"> <%= pluralize(user.posts.count, "Post") %> </p>
       <p class="fw-bold"> <%= pluralize(user.followers.count, "Follower") %> </p>
-      <p class="fw-bold"> <%= pluralize(user.followings.count, "Following") %> </p>
+      <p class="fw-bold"> <%= "#{user.followings.count} Following" %> </p>
     </div>
   </div>
 </div>
